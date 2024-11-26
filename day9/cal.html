@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <input type="number" id="n1" placeholder="enter the number"><br><br>
+    <input type="number" id="n2" placeholder="enter the number"><br><br>
+    <button id="add">+</button>
+    <button id="sub">-</button>
+    <button id="multi">*</button>
+    <button id="divi">/</button>
+    <p id="result">result</p>
+    <script>
+        let n1i=document.getElementById("n1");
+        let n2i=document.getElementById("n2");
+        let add=document.getElementById("add");
+        let sub=document.getElementById("sub");
+        let multi=document.getElementById("multi");
+        let divi=document.getElementById("divi");
+        let resultpara=document.getElementById("result");
+           
+        function calculate(operators){
+            let n1=parseFloat(n1i.value);
+            let n2=parseFloat(n2i.value);
+            let result;
+            switch(operators){
+                case '+':
+                    result=n1+n2;
+                    break;
+                case '-':
+                    result=n1-n2;
+                    break;
+                case '*':
+                    result=n1*n2;
+                    break;
+                case '/':
+                    if(n2==0){
+                        console.log("You have entered is invaild number");
+                    }
+                    else{
+                        result=n1/n2;
+                    }
+                    break;
+            }
+            resultpara.textContent = `Result:${result}`;
+
+        }
+        add.addEventListener("click",()=>calculate('+'))
+        sub.addEventListener("click",()=>calculate('-'))
+        multi.addEventListener("click",()=>calculate('*'))
+        divi.addEventListener("click",()=>calculate('/'))
+
+    </script>
+</center>
+</body>
+</html>

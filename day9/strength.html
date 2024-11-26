@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #strong,#medium,#week{
+            display: none;
+        }
+    </style>
+</head>
+<body><center>
+    <input type="password" id="pw1" placeholder="enter password"><br>
+    <div id="strong" style="color: green;">strong password</div>
+    <div id="medium" style="color: yellow;">medium password</div>
+    <div id="week" style="color: red;">week password</div>
+    <button id="btn">Submit</button></center>
+    <script>
+        let pw1=document.getElementById("pw1");
+        let btn=document.getElementById("btn");
+        let divstrong=document.getElementById("strong");
+        let divmedium=document.getElementById("medium");
+        let divweek=document.getElementById("week");
+        btn.addEventListener("click",function(){
+            if(pw1.value.length<=8){
+                week.style.display="block";
+            }
+            else if(pw1.value.length<=12){
+                medium.style.display="block";
+            }
+            else if(pw1.value.length>=13){
+                strong.style.display="block";
+            }
+            console.log(pw1.value);
+            
+        })
+
+    </script>
+</body>
+</html>
